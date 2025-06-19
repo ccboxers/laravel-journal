@@ -14,9 +14,11 @@ composer require layman/laravel-journal
 php artisan vendor:publish --provider="Layman\LaravelJournal\JournalServiceProvider" --tag=journal
 
 // SESSION_DRIVER=database 执行
-php artisan make:session:table
+php artisan make:session-table
 
 php artisan migrate
+
+php artisan db:seed --class="Layman\\LaravelJournal\\Database\\Seeders\\JournalUserSeeder"
 ```
 
 ## 🚀 使用
