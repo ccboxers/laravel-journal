@@ -1,0 +1,33 @@
+{
+    "name": "layman/laravel-journal",
+    "description": "laravel-journal 日志视图",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "logs",
+        "journal",
+        "logging"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Layman\\LaravelJournal\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "layman"
+        }
+    ],
+    "require": {
+        "php": "^7.0|^8.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Layman\\LaravelJournal\\JournalServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
