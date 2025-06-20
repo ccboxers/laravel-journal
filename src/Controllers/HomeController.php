@@ -25,20 +25,11 @@ class HomeController extends Controller
         $logLines       = [];
         $totalLines     = 0;
 
-        if ($channel && $path) {
-            $logPath = storage_path($path);
-            if (file_exists($logPath)) {
-                $currentLogFile = $path;
-                $totalLines     = $this->countFileLines($logPath);
-                $logLines       = $this->getLogPageLines($logPath, $page, $perPage, $search);
-            }
-        } elseif ($search) {
-            $logPath = storage_path($path);
-            if (file_exists($logPath)) {
-                $currentLogFile = $path;
-                $totalLines     = $this->countFileLines($logPath);
-                $logLines       = $this->getLogPageLines($logPath, $page, $perPage, $search);
-            }
+        if ($path && file_exists(storage_path($path))) {
+            $logPath        = storage_path($path);
+            $currentLogFile = $path;
+            $totalLines     = $this->countFileLines($logPath);
+            $logLines       = $this->getLogPageLines($logPath, $page, $perPage, $search);
         }
 
         return view('journal::home', compact(
